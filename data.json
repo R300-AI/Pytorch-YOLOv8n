@@ -1,0 +1,1 @@
+{"dtype": "Vision2D", "task": "ObjectDetection", "outputs": ["FLOAT32.pth", "FLOAT32.tflite", "FLOAT16.tflite"]}

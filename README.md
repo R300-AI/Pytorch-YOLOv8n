@@ -9,6 +9,10 @@ Pytorch-YOLOv8n
         ├─ datasets/<username>/<dataset>/...       #使用者(username)選定的資料集，需透過後端Xdriver APIs自動pull進來
         ├─ logs/<username>/<dataset>.log           #使用者(username)在執行run.sh過程中所產出的logs內容
         ├─ putputs/<username>/<dataset>/ ...       #使用者(username)在執行完run.sh後，最終產生的檔案皆存放與此路徑
-    ├─ spec.json         # 系統的配置檔，必須包含以下資訊：型態(dtype [str])、任務類型(task [str])、引擎名稱(name [str] *與repo相同, 但需將-換成/)、輸出精度與格式(outputs [list])
+    ├─ spec.json         # 後端系統所需讀取的系統配置檔，必須包含以下資訊：
+                              - 型態(dtype [str])
+                              - 任務類型(task [str])
+                              - 引擎名稱(name [str] ) *需與repo名稱相同, 但要將'-'換成'/'
+                              - 輸出精度與格式(outputs [list])   *引擎輸出的模型規格，僅作為提供使用者參考的資訊
     └─ run.sh            # 引擎的基本元素-(2)，需投入必要參數以執行引擎的主要訓練功能
 ```

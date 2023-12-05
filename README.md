@@ -2,7 +2,7 @@
 ```
 Pytorch-YOLOv8n
     ├─ docker
-        ├─ Dockerfile                              # 依照不同硬體架構可能會需要改版(需在Dockerfile檔名後方加入_<硬體>，如：Dockerfile_GPU)
+        ├─ Dockerfile                              # 依照不同硬體架構可能會需要改版(需在Dockerfile檔名後方加入_<硬體>，如：Dockerfile_GPU)，可再於run.sh中設定所要建立的版本
     ├─ engine/...                                  # 引擎執行過程中所需搭配的自定義程式庫，通常用於在run.sh時一併掛入docker的環境呼叫。                  
     ├─ tmp                                         # 系統的暫存路徑，必須需符合以下規範：
         ├─ datasets/<username>/<dataset>/...       # 使用者(username)選定的資料集，需透過後端Xdriver APIs自動pull進來

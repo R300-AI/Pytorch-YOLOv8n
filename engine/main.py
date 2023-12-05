@@ -12,12 +12,12 @@ if __name__ == '__main__':
         yaml.dump(data, f)
     results = model.train(data='./dataset/data.yaml', epochs=2)
 
-    #輸出模型並存放於./output
+    #輸出模型並存放於./benchmark
     saved_path = model.export(format='tflite', half=True, int8=True)
     output_name = saved_path.split('/')[-1]
-    subprocess.run(["cp",  saved_path.replace(output_name, "best_float32.tflite"), "./output/FLOAT32.tflite"])
-    subprocess.run(["cp",  saved_path.replace(output_name, "best_float16.tflite"), "./output/FLOAT16.tflite"])
-    subprocess.run(["cp",  saved_path.replace(output_name, "best_int8.tflite"), "./output/INT8.tflite"])
-    subprocess.run(["cp",  saved_path.replace(output_name, "best_full_integer_quant.tflite"), "./output/FLOAT32_quant.tflite"])  #CPU / GPU
-    subprocess.run(["cp",  saved_path.replace(output_name, "best_integer_quant.tflite"), "./output/INT8_quant.tflite"])  #CPU / TPU / NPU
+    subprocess.run(["cp",  saved_path.replace(output_name, "best_float32.tflite"), "./benchmark/FLOAT32.tflite"])
+    subprocess.run(["cp",  saved_path.replace(output_name, "best_float16.tflite"), "./benchmark/FLOAT16.tflite"])
+    subprocess.run(["cp",  saved_path.replace(output_name, "best_int8.tflite"), "./benchmark/INT8.tflite"])
+    subprocess.run(["cp",  saved_path.replace(output_name, "best_full_integer_quant.tflite"), "./benchmark/FLOAT32_quant.tflite"])  #CPU / GPU
+    subprocess.run(["cp",  saved_path.replace(output_name, "best_integer_quant.tflite"), "./benchmark/INT8_quant.tflite"])  #CPU / TPU / NPU
     print('Performing finished')

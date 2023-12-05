@@ -33,6 +33,9 @@ docker build -f $ENGINE_DIR/docker/Dockerfile . -t $ENGINE_NAME
 echo "${ENGINE_NAME} docker engine has been build."
 
 #重置刷新原有的log檔及路徑
+mkdir $ENGINE_DIR/tmp
+mkdir $ENGINE_DIR/tmp/logs
+mkdir $ENGINE_DIR/tmp/outputs
 mkdir $ENGINE_DIR/tmp/logs/$USERNAME
 touch $LOG_DIR && > $LOG_DIR
 rm -i -r -f $OUTPUT_DIR/*

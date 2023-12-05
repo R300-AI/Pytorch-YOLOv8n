@@ -1,0 +1,1 @@
+{"dtype": "Vision2D", "task": "ObjectDetection", "version": "20231204", "name":"Pytorch/YOLOv8n", "outputs": ["FLOAT32.pt", "FLOAT32.onnx", "FLOAT32.tflite", "FLOAT16.tflite", "INT8.tflite", "FLOAT32_quant.tflite", "INT8_quant.tflite"]}

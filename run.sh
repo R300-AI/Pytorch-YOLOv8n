@@ -50,7 +50,7 @@ echo "${ENGINE_NAME} docker engine has been build."
 # 將資料集掛載於Docker環境，並開始進行訓練。
 ###############################################
 echo "Start to run ${ENGINE_NAME} docker engine..."
-docker container run --name $CONTAINER_NAME -it -v $OUTPUT_DIR:/usr/src/ultralytics/benchmark -v $DATASET_DIR:/usr/src/ultralytics/dataset -v $ENGINE_DIR/engine:/usr/src/ultralytics/engine $ENGINE_NAME | tee -a $LOG_DIR
+docker container run --name $CONTAINER_NAME -it -v $OUTPUT_DIR:/usr/src/ultralytics/benchmark -v $ENGINE_DIR/engine:/usr/src/ultralytics/engine -v $DATASET_DIR:/usr/src/ultralytics/engine/dataset $ENGINE_NAME | tee -a $LOG_DIR
 echo "Benchmark saved to ${OUTPUT_DIR}"
 ###############################################
 # 清除訓練環境及暫存資源

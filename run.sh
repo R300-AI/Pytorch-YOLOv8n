@@ -10,6 +10,11 @@ do
     esac
 done
 
+echo ""
+echo "USERNAME $USERNAME"
+echo "DATASET $DATASET"
+echo ""
+
 ###############################################
 # 自動建立Docker執行環境，需滿足已下掛件：
 # 1. Docker執行所需掛載的的資料集統一置於DATASET_DIR=./tmp/datasets/$USERNAME/$DATASET
@@ -26,8 +31,10 @@ mkdir $ENGINE_DIR/tmp/logs/$USERNAME
 LOG_DIR=$ENGINE_DIR/tmp/logs/$USERNAME/$DATASET.log
 touch $LOG_DIR && > $LOG_DIR
 
+echo ""
 echo "ENGINE_DIR $ENGINE_DIR"
 echo "LOG_DIR $LOG_DIR"
+echo ""
 
 ENGINE_NAME=$(python3 -c "import json; data=json.load(open('${ENGINE_DIR}/spec.json')); print(data['name'].lower())")
 CONTAINER_NAME=$(python3 -c "print('${USERNAME}/${DATASET}/${ENGINE_NAME}'.replace('/', '_'))")

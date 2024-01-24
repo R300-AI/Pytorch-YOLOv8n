@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     model = YOLO('yolov8n.yaml')
-
+    print(subprocess.run(["ls"]))
     #指向./dataset，並進行模型訓練
     with open('./dataset/data.yaml', 'r') as f:
         data =yaml.safe_load(f)

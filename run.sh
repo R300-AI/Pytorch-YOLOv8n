@@ -26,6 +26,9 @@ mkdir $ENGINE_DIR/tmp/logs/$USERNAME
 LOG_DIR=$ENGINE_DIR/tmp/logs/$USERNAME/$DATASET.log
 touch $LOG_DIR && > $LOG_DIR
 
+echo "ENGINE_DIR $ENGINE_DIR"
+echo "LOG_DIR $LOG_DIR"
+
 ENGINE_NAME=$(python3 -c "import json; data=json.load(open('${ENGINE_DIR}/spec.json')); print(data['name'].lower())")
 CONTAINER_NAME=$(python3 -c "print('${USERNAME}/${DATASET}/${ENGINE_NAME}'.replace('/', '_'))")
 
